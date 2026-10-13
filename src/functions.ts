@@ -2,7 +2,7 @@
 //
 // Each of these either takes a function, returns one, or both.
 
-import { Student } from './data.js';
+import { Student, students } from './data.js';
 
 /** A test on a student. Used by everything below. */
 export type Test = (student: Student) => boolean;
@@ -18,8 +18,7 @@ export type Test = (student: Student) => boolean;
  * One line is enough, once you see what has to be returned.
  */
 export function not(test: Test): Test {
-  // TODO
-  throw new Error('not implemented');
+  return (student: Student) => !test(student)
 }
 
 // --- B2. One pass, two answers -------------------------------------------
